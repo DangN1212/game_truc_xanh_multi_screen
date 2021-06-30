@@ -16,7 +16,7 @@ import {
   SafeAreaView,
   TouchableOpacity
 } from 'react-native';
-import {useRoute, useNavigation} from '@react-navigation/native';
+
 import Card from './Card/Card';
 import {useRef} from 'react';
 import {ROUTE, STATUS} from '../constant';
@@ -35,9 +35,9 @@ const LAYOUT_SETTING = {
   COLUMN: 6
 };
 
-export default function Home() {
-  const route = useRoute();
-  const navigation = useNavigation();
+export default function Home({navigation, route}) {
+  // const route = useRoute();
+  // const navigation = useNavigation();
   const insets = useSafeAreaInsets();
   let intervalRef = useRef(null);
   const arr = Array.from({length: 18}, (v, i) => {

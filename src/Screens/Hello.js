@@ -1,4 +1,3 @@
-import {useNavigation} from '@react-navigation/native';
 import React, {useState} from 'react';
 import {
   View,
@@ -9,10 +8,10 @@ import {
 } from 'react-native';
 import {ROUTE} from '../constant';
 
-export default function Hello() {
+export default function Hello({navigation}) {
   const [name, setName] = useState('');
 
-  const navigation = useNavigation();
+  // const navigation = useNavigation();
 
   const handleSubmit = () => {
     navigation.replace(ROUTE.HOME, {name: name});

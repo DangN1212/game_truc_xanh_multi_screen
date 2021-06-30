@@ -1,10 +1,9 @@
-import {useNavigation, useRoute} from '@react-navigation/native';
 import React from 'react';
 import {View, Text, StyleSheet, TouchableOpacity} from 'react-native';
 import {ROUTE} from '../constant';
-export default function End() {
-  const route = useRoute();
-  const navigation = useNavigation();
+export default function End({route, navigation}) {
+  // const route = useRoute({navigation});
+  // const navigation = useNavigation();
   const handleBack = () => navigation.navigate(ROUTE.HELLO);
 
   return (
