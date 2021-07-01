@@ -4,7 +4,10 @@ import {
   Text,
   StyleSheet,
   TextInput,
-  TouchableOpacity
+  TouchableOpacity,
+  KeyboardAvoidingView,
+  ScrollView,
+  Platform
 } from 'react-native';
 import {ROUTE} from '../constant';
 
@@ -21,21 +24,30 @@ export default function Hello({navigation}) {
     setName(value);
   };
 
-  return (
-    <View style={styles.container}>
-      <Text>Hello, please input your name</Text>
-      <TextInput
-        style={styles.input}
-        value={name}
-        onChangeText={handleOnChange}
-      />
+  const behavior = Platform.OS === 'ios' ? 'padding' : undefined;
 
-      <View>
-        <TouchableOpacity onPress={handleSubmit} style={styles.button}>
-          <Text style={styles.text}>Submit</Text>
-        </TouchableOpacity>
-      </View>
-    </View>
+  return (
+    <KeyboardAvoidingView behavior={behavior} style={{flex: 1}}>
+      <ScrollView
+        style={{flex: 1}}
+        bounces={false}
+        contentContainerStyle={{flexGrow: 1}}>
+        <View style={styles.container}>
+          <Text>Hello, please input your name</Text>
+          <TextInput
+            style={styles.input}
+            value={name}
+            onChangeText={handleOnChange}
+          />
+
+          <View>
+            <TouchableOpacity onPress={handleSubmit} style={styles.button}>
+              <Text style={styles.text}>Submit</Text>
+            </TouchableOpacity>
+          </View>
+        </View>
+      </ScrollView>
+    </KeyboardAvoidingView>
   );
 }
 
