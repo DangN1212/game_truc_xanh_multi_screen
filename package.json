@@ -7,7 +7,8 @@
     "ios": "react-native run-ios",
     "start": "react-native start",
     "test": "jest",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "start-promax": "react-native run-ios --simulator \"iPhone 12 Pro Max\""
   },
   "dependencies": {
     "@react-native-community/masked-view": "^0.1.11",

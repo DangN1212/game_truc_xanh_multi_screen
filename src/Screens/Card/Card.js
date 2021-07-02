@@ -1,5 +1,6 @@
 import React from 'react';
 import {Text, Image, View, TouchableOpacity} from 'react-native';
+import {MARGIN} from '../Home';
 
 export const imgBack = require('../../assets/images/back.png');
 export const imgArr = [
@@ -22,7 +23,8 @@ export default function Card({data, onPress, width, height}) {
         style={{
           height: height,
           width: width,
-          margin: 5,
+          marginHorizontal: MARGIN.HORIZONTAL,
+          marginVertical: MARGIN.VERTICAL,
           opacity: data.isDisplay ? 1 : 0
         }}
       />

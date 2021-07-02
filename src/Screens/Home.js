@@ -25,7 +25,7 @@ const {width, height} = Dimensions.get('window');
 const randomId = params => {
   return '_' + Math.random().toString(36).substr(2, 9);
 };
-const MARGIN = {
+export const MARGIN = {
   HORIZONTAL: 10,
   VERTICAL: 10
 };
@@ -191,18 +191,18 @@ export default function Home({navigation, route}) {
   const getWidthOfCard = params => {
     return (
       (width - getPaddingHorizontal() * 2) / LAYOUT_SETTING.COLUMN -
-      MARGIN.HORIZONTAL
+      MARGIN.HORIZONTAL * 2
     );
   };
 
   const getHeightOfCard = () => {
     return (
-      (height - getPaddingVertical() * 2) / LAYOUT_SETTING.ROW - MARGIN.VERTICAL
+      (height - getPaddingVertical() * 2) / LAYOUT_SETTING.ROW -
+      MARGIN.VERTICAL * 2
     );
   };
 
   const getTimeByHm = () => {
-    console.log(time);
     if (time <= 60) {
       return time;
     }
